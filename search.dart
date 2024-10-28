@@ -52,23 +52,23 @@ class _OfficeSearchPageState extends State<OfficeSearchPage> {
   }
 
   // Realizar búsqueda y enviar datos al `searched_card.dart`
-  void _search() {
-    Navigator.pushNamed(
-      context,
-      '/searched_card',
-      arguments: {
-        "edificio": _sectorController.text.isNotEmpty
-            ? _sectorController.text
-            : "Sin especificar",
-        "tipo": isPrivateSelected ? "Privado" : "Compartido",
-        "capacidad": "$attendees personas",
-        "fecha": selectedDateRange != null
-            ? 'Desde: ${_formatDate(selectedDateRange!.start)}\n'
-              'Hasta: ${_formatDate(selectedDateRange!.end)}'
-            : 'Sin fecha seleccionada',
-      },
-    );
-  }
+  //void _search() {
+    //Navigator.pushNamed(
+      //context,
+      //'/searched_card',
+      //arguments: {
+        //"edificio": _sectorController.text.isNotEmpty
+            //? _sectorController.text
+            //: "Sin especificar",
+        //"tipo": isPrivateSelected ? "Privado" : "Compartido",
+        //"capacidad": "$attendees personas",
+        //"fecha": selectedDateRange != null
+            //? 'Desde: ${_formatDate(selectedDateRange!.start)}\n'
+              //'Hasta: ${_formatDate(selectedDateRange!.end)}'
+            //: 'Sin fecha seleccionada',
+      //},
+    //);
+  //}
 
   // Formatear la fecha en dd/MM/yyyy
   String _formatDate(DateTime date) {
@@ -227,7 +227,7 @@ class _OfficeSearchPageState extends State<OfficeSearchPage> {
                     child: const Text("Borrar Filtros"),
                   ),
                   ElevatedButton(
-                    onPressed: _search,
+                    onPressed: _resetFilters, //_search,
                     child: const Text("Buscar"),
                   ),
                 ],
